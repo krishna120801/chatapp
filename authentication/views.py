@@ -58,7 +58,6 @@ def search(request):
         search= username.union(Nickname)
         status["query"]=query
         status["itrsearch"]=search
-        print(status)
     return render(request,"search.html",status)
 @login_required
 def chatlist(request):
