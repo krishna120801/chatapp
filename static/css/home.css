@@ -1,0 +1,91 @@
+body{
+    background-image: linear-gradient( 90.4deg,  rgba(255,220,163,1) 21.2%, rgba(129,255,239,1) 90.7% );
+    background-size: cover;
+    color:#fff;
+    text-align: center;
+    justify-content: space-around;
+    width:100%;
+}
+body .intro{
+display:flex;
+justify-content:space-between;
+}
+.intro h1{
+    font-size-adjust: inherit;
+    font-family: 'Audiowide',cursive;
+    margin-bottom: 15px;
+    margin-top:5%;
+    margin-left: 20%;
+    align-items: center;
+}
+.greet{
+    border-top: 1px solid #fff;
+    text-align: right;
+    padding-right: 1%;
+}@media (max-width:767px){
+    .profilsec{
+        position: fixed;
+        margin-top:25%;
+    width:auto;
+   height:52%;
+   overflow-x: auto;
+    }
+}
+li{
+    list-style: none;
+}
+.profilsec
+{position: fixed;
+    padding:1em;
+    margin-bottom: 10%;
+    width:auto;
+    top:50%;
+    left:50%;
+    position:absolute;
+    transform: translate(-50%,-50%);
+    background: #f2f2f2;
+    color:#000;
+}
+ #updateduser{
+    background: none;
+    float: left;
+    }
+.anchor{
+    color:rgb(0, 255, 170);
+    padding:0.2em;
+    }
+    .cemail,.nickname{
+        display:none;
+    }
+    .display{
+        display: block;
+    }
+    .logoutbtn{
+        background: none;
+        outline:none;
+        border:2px solid aquamarine;
+        font-weight: bold;
+        float:left;
+        margin-left: 5%;
+    }
+    li small{background: #000;
+        color: rgba(248, 241, 139, 0.932);
+    }
+    .innerbtn:hover,.innerbtn1:hover{
+        text-decoration: 2px underline;
+    }
+    .innerbtn,.innerbtn1{
+        outline:none;
+        border:none;
+        font-style: italic;
+        color:darkcyan;
+        cursor: pointer;
+    }
+    strong{
+        font-family: 'Asap Condensed', cursive;
+    justify-content: space-between;
+    padding-right: 2px;
+    }
+    li form {
+        margin-top: 2%;
+    }

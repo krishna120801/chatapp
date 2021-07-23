@@ -1,0 +1,41 @@
+{% include 'header.html' %}
+{% load static %}
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Fuggles&display=swap" rel="stylesheet">
+        <meta charset=utf-8>
+	    <meta name=description content="IE=edge">
+        <meta name=viewport content="width=device-width, initial-scale=1">
+        <title>ChatApp</title>
+        <link rel="stylesheet" href="{% static 'css/home.css' %}" type="text/css">
+        <script
+        src="https://code.jquery.com/jquery-3.6.0.slim.js"
+        integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY="
+        crossorigin="anonymous"></script>
+        <script src="{% static 'js/home.js' %}"></script>
+    </head>
+    <body>
+        <div class="intro"><h1>PROFILE</h1>
+            <div class="greet">Hi<p> </p> <h4><b>{{ user }}</b>!</h4></div>
+        </div>
+        <div class="profilsec">
+            <ul id="updateduser">
+            <li><strong>Email:</strong> {{ user.email }} 
+                <button class="innerbtn">Change/update</button>
+                <form class="cemail" method="POST">{% csrf_token %}<input type="text" name="email"> <button type="submit"class="anchor">Add email</button>
+                </form><br>
+            <small>Email helps you for reset your password. So please fill these section with valid email.</small>
+            </li>
+            <li><strong>Nickname:</strong>{{ user.get_short_name }}
+                <button class="innerbtn1">Change/update</button> 
+                <form class="nickname"method="POST">{% csrf_token %}<input type="text" name="firstname"> <button type="submit" class="anchor">Add Nickname</button>
+                </form><br>
+                <small>It helps to users great pronounciation for you:)</small>.</small>
+            </li>
+            </ul><br>
+            <diV class="logoutbtn"><a class="anchor" href="{% url 'logout' %}" >Logout</a></diV>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,62 @@
+h1{
+  text-decoration: underline aquamarine;
+  
+}
+ul li{
+  color:red;
+  list-style-type: none;
+}
+.adv{
+  text-align: center;
+  color:#fff;
+  padding-bottom: 0%;
+  margin-bottom: 5%;
+}
+a{
+    text-decoration: underline;
+    color:#000;
+}
+.sgnform div{
+  padding:2%;
+}
+#id_username,#id_password1,#id_password2{
+  opacity: 0.6;
+    border-radius: 5px;
+    outline:none;
+    margin-top:3%;
+    margin-left:10%;
+    margin-right:20%;
+    height:2em;
+    width:80%;
+}
+.btn{
+  width:10rem;
+  background-color: rgb(15, 150, 228);
+  height:auto;
+  outline:none;
+  border:none;
+  padding:1em;
+  margin:1rem;
+  color:#f2f2f2;
+  float:left;
+}
+.sgnform{
+  left      : 50%;
+  top       : 50%;
+  position  : absolute;
+  transform : translate(-50%, -50%);
+  background-color: #fff;
+  opacity:0.8;
+  border:3px solid #f2f2f2;
+  border-radius:10px ;
+  padding:auto 2%;
+  width:45%;
+  text-align: center;
+}
+body{
+  color:rgba(10, 79, 82, 0.651);
+  background-image:url('https://michaelgillettonlinecontent.azurewebsites.net/umbraco/api/wallpapersdata/download?id=6643&downloadUrl=https://cdn.wallpaperhub.app/cloudcache/7/4/e/0/6/4/74e06498dd0c99755ccd59281088f79ce798a48e.jpg') ;
+  background-repeat: no-repeat;
+  max-width: 100%;
+  max-height: 100%;
+}

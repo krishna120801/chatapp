@@ -1,0 +1,14 @@
+$(document).ready(
+function(){
+    $('.innerbtn').click(
+    function(){
+        $('.cemail').toggleClass("display");
+    });
+});
+$(document).ready(
+    function(){
+        $('.innerbtn1').click(
+        function(){
+            $('.nickname').toggleClass("display");
+        });
+    });

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset=utf-8>
+	    <meta name=description content="IE=edge">
+        <meta name=viewport content="width=device-width, initial-scale=1">
+        <title>CHATRU</title>
+        <script
+        src="https://code.jquery.com/jquery-3.6.0.slim.js"
+        integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY="
+        crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="{% static 'css/registration.css' %}" type="text/css">
+    </head>
+    <body>
+        {% load crispy_forms_tags %}
+
+        <div class="adv">
+            <h1>CHATRU</h1>
+            <p>THE ASYNCHRONOUS CHAT APPLICATION</p>
+        </div>
+        
+        <form class="sgnform" method="POST">
+            {% if messages %}
+        <ul><li>{{ messages.0 }}</li>
+    </ul>
+        {% endif %}
+            {% csrf_token %}
+            <div>Username{{ form.username  }}<br>
+            <small style="color:rgba(252, 252, 32, 0.979)">Note: username is not your email id. so don't apply @ format:)</small>
+            </div>
+            <div>Password<br>{{ form.password1 }}<br></div>
+            <div>Confirm Password{{ form.password2 }}<br></div>
+            <div><button class="btn" type="submit">SIGN UP</button></div>
+                
+            <p>if you have already an account then <a href="login">click here</a></p>
+        </form>
+        <script>
+            $('#id_username').keydown(function(e) {
+  if (e.keyCode === 190 || e.keyCode === 110 || e.which === 64) {
+    e.preventDefault();
+  }
+});
+        </script>
+    </body>
+</html>

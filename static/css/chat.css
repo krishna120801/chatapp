@@ -1,0 +1,104 @@
+.chatbox{
+    background-image: radial-gradient( circle 314px at 95.1% 37.9%,  rgba(255,246,78,1) 1.4%, rgba(242,252,186,1) 100.7% );
+    margin:1rem;
+    border:2px solid rgb(126, 213, 248);
+    border-radius: 10px;
+    height:80%;
+    width:auto; 
+}
+.nav ul{
+    background:none;
+    display: flex;
+    justify-content: space-between;   
+}
+.nav ul li{
+    margin-top:1rem;
+    background:none;
+    float:left;
+    list-style-type: none;
+}
+.nav{
+    margin : 0 auto;
+    width:90%;
+    height:3rem;
+    align-items: center;
+    border: 3px solid rgba(56, 28, 47, 0.527);
+    border-top: none;
+    background-color: rgba(105, 105, 105, 0.199);
+}
+.persontwo_chat ,.my_chat{
+    padding: 10px;
+    margin:1% 10%;
+    font-family: 'Uchen', serif;
+    border-radius: 10px;
+    height:auto;
+    width:50%;
+}
+.persontwo_chat{
+    color:#f2f2f2;
+    background-color:  rgba(97,169,210,1);
+    float:left;
+    font-weight:bold;
+    font-size:20px;
+}
+.my_chat{
+    color:#000;
+    
+    font-size: 20px;
+    font-weight: bold;
+    float:right;
+    background-color: #f2f2f2;
+}
+.sendmessage{
+    border-radius: 50%;
+    height:3rem;
+    width:3rem;
+    background-color: rgb(17, 112, 53);
+}
+div form{
+    text-align: center;
+    align-items: center;
+}
+.input{
+    color:rgb(15, 2, 2);
+    background-color: rgba(191, 189, 196, 0.842);
+    border:none;
+    border-radius: 12px;
+    height:3rem;
+    width:75%;
+    outline:none;
+}
+button{
+    outline: none;
+    border:none;
+}
+@media (max-width:768px){
+    .chatbox{
+        height:100%;
+    }
+    .msgprocessing{
+        margin-bottom: 2em;
+    }
+}
+.msgprocessing{
+    width:80%;
+    left:50%;
+    align-items: center;
+    position: absolute;
+    transform: translate(-50%);
+}
+.st {
+    font-size: 25px;
+    color: red;
+}
+.far{
+    font-size: 20px;
+}
+.chatpannel{
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    scroll-margin-inline-end: 4px;
+    height:80%;
+}.chat{
+    display:none;
+}

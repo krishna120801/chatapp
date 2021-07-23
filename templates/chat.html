@@ -1,0 +1,90 @@
+{% include 'header.html' %}
+{% load static %}
+<html>
+    <head>
+        <meta charset=utf-8>
+	    <meta name=description content="IE=edge">
+        <meta name=viewport content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'css/chat.css' %}" type="text/css">        
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+        <title>CHATRU</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Uchen&display=swap" rel="stylesheet">
+    </head>
+<body>
+<section class="chatbox">
+    <nav class="nav">
+        <ul>
+            <li id="thirdparty"><i alt="hello" id="fas" class="fas fa-user-circle st"></i></li>
+            <li><form action="{% url 'logout' %}"><input type="submit" value="logout"></form></li>
+        </ul>
+    </nav>
+    <div id="chatlist"class="chatpannel">
+    <!--<div class="persontwo_chat"></div> <div class="my_chat"><div class="div_my_chat"></div></div>--><!-- mychat-->
+</div>
+    
+    <div class="msgprocessing">
+            <input id="sentmsg" placeholder="Type a message!" class="input" type="text">
+            <button id="submit"  type="button" class="sendmessage"><i class="far fa-paper-plane"></i></button>
+    </div>
+    
+</section>
+{{ room_name|json_script:"room-name" }}
+{% block js %}
+<script>
+alert("For message processing your partner should be online at a time because messages are shown at a time when user is online and you both on same board.");
+    const roomname=JSON.parse(document.getElementById('room-name').textContent);
+    const chatSoc= new WebSocket(
+        'ws://'+window.location.host+'/ws/chat/'+roomname+'/'
+    );//Socket connection.
+    document.querySelector("#submit").onclick =function(e){
+        const mess=document.querySelector("#sentmsg");
+        const msg= mess.value;
+        console.log(mess);
+        chatSoc.send(JSON.stringify({
+            'message': msg,
+            'sender': "{{ user }}",
+        }));
+        mess.value="";
+    };
+    //
+    //document.querySelector("#sel_user").innerHTML=roomname;
+    chatSoc.onmessage = function(e,msg){
+        let flag=0;
+        const data = JSON.parse(e.data);
+        console.log(data);
+        if (data.message !=='' && data.sender !== "{{ user }}"){
+            console.log("i'm 2")
+            $('.chatpannel').append('<div class="persontwo_chat">'+ data.message + '</div>');
+        }
+        else if (data.message !='' && data.sender === "{{ user }}")  $(".chatpannel").append('<div class="my_chat"><div class="div_my_chat">'+ data.message + '</div></div>');
+    }
+    var str=roomname;
+    let s=str.replace("{{ user }}","");
+    document.getElementById('thirdparty').innerHTML+=s;
+
+    {% for i in userss %}
+    if ('{{ i.user }}'==s){
+        let m= document.getElementById('fas');
+        m.style.color='green'
+    }
+    {% endfor %}
+    var scroll=0;
+    $( "#submit" ).click(function(){
+     $('.chatpannel').stop().animate({ scrollTop: $(".chatpannel")[0].scrollHeight}, 100);
+ }); 
+    $('#sentmsg').keypress(
+        function(e)
+{
+let key=e.which;
+if (key===13){
+    $('#submit').click();
+}
+});
+</script>
+{% endblock %}
+</body>
+
+</html>

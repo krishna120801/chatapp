@@ -1,0 +1,42 @@
+{% include 'header.html' %}
+{% load static %}
+<html>
+    <head>
+        <meta charset=utf-8>
+	    <meta name=description content="IE=edge">
+        <meta name=viewport content="width=device-width, initial-scale=1">
+        <script
+        src="https://code.jquery.com/jquery-3.6.0.slim.js"
+        integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY="
+        crossorigin="anonymous"></script>
+        <title>CHATRU</title>
+       <link rel="stylesheet" href="{% static 'css/list.css' %}" type="text/css">
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th>S.No</th>
+                <th>Username</th>
+                <th>Nickname</th>
+            </tr>
+    {% for userlist in users %}
+            <tr class="content">
+                <td>{{ forloop.counter }}</td>
+                <td id=>{{ userlist.username }}</td>
+                <td>{{ userlist.first_name }}</td>
+                <td><a class="chatbtn" href="chat/{{ userlist.username }}{{ user.username }}">Chat</a><p id="{{ userlist.first_name}}{{ forloop.counter }}"></p></td>
+            </tr>
+    {% endfor %}
+</table>
+<script>
+    {% for i in userss %}
+    {% for userlist in users %}
+    if ('{{ i.user }}'=='{{ userlist.username }}'){
+        let m=document.getElementById("{{ userlist.first_name }}{{ forloop.counter }}");
+        m.style.backgroundColor='green'
+    }
+    {% endfor %}
+    {% endfor %}
+</script>
+</body>
+</html>

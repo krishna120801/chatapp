@@ -1,0 +1,54 @@
+
+{% include 'header.html' %}
+{% load static %}
+<!DOCTYPE html>    
+<html>
+    <head>
+        <meta charset=utf-8>
+	    <meta name=description content="IE=edge">
+        <meta name=viewport content="width=device-width, initial-scale=1">
+        <title>ChatApp</title>
+        <link rel="stylesheet" href="{% static 'css/list.css' %}" type="text/css">
+    </head>
+    <body>
+{% if itrsearch|length < 1 %}
+        <div class="errormsg"><h5>No search results</h5>
+    Your search query : <b>{{query}}</b> did not match any documents. <br>
+    Suggestions:
+            <ul>
+                <li class="l">Make sure that all words are spelled correctly.</li>
+                <li class="l">Try more general keywords.</li>
+                <li class="l"> Try fewer keywords.</li>
+                <li class="l"> Try different keywords.</li>
+            </ul>
+        </div>
+{% else %}
+        <h3>Showing all results matching <b>{{ query }}</b></h3>
+        <table>
+            <tr>
+                <th>S.no</th>
+                <th>Username</th>
+                <th>Nickname</th>
+            </tr>
+            {% for search in itrsearch %}
+            <tr class="content">
+                <td>{{ forloop.counter }}</td>
+            <td>{{ search.username }}</td>
+            <td>{{ search.first_name }}</td>
+            <td><b><a href="chat/{{ search.username }}{{ user.username }}" >Chat</a></b><p id="{{ search.first_name}}{{ forloop.counter }}"></p></td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% endif %}
+        <script>
+            {% for i in userss %}
+    {% for userlist in itrsearch %}
+    if ('{{ i.user }}'=='{{ userlist.username }}'){
+        let m=document.getElementById("{{ userlist.first_name }}{{ forloop.counter }}");
+        m.style.backgroundColor='green'
+    }
+    {% endfor %}
+    {% endfor %}
+        </script>
+</body>
+</html>
