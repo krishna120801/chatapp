@@ -34,6 +34,8 @@
 {{ room_name|json_script:"room-name" }}
 {% block js %}
 <script>
+	//<![CDATA[
+<!--
 alert("For message processing your partner should be online at a time because messages are shown at a time when user is online and you both on same board.");
     const roomname=JSON.parse(document.getElementById('room-name').textContent);
     const chatSoc= new WebSocket(
@@ -80,6 +82,8 @@ if (key===13){
     $('#submit').click();
 }
 });
+     //-->
+//]]>
 </script>
 {% endblock %}
 </body>
