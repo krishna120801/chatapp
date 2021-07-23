@@ -39,7 +39,7 @@
 alert("For message processing your partner should be online at a time because messages are shown at a time when user is online and you both on same board.");
     const roomname=JSON.parse(document.getElementById('room-name').textContent);
     const chatSoc= new WebSocket(
-        'wss://'+window.location.host+'/ws/chat/'+roomname+'/'
+        'https://'+window.location.host+'/ws/chat/'+roomname+'/'
     );//Socket connection.
     document.querySelector("#submit").onclick =function(e){
         const mess=document.querySelector("#sentmsg");
