@@ -42,7 +42,6 @@ alert("For message processing your partner should be online at a time because me
     document.querySelector("#submit").onclick =function(e){
         const mess=document.querySelector("#sentmsg");
         const msg= mess.value;
-        console.log(mess);
         chatSoc.send(JSON.stringify({
             'message': msg,
             'sender': "{{ user }}",
@@ -54,9 +53,7 @@ alert("For message processing your partner should be online at a time because me
     chatSoc.onmessage = function(e,msg){
         let flag=0;
         const data = JSON.parse(e.data);
-        console.log(data);
         if (data.message !=='' && data.sender !== "{{ user }}"){
-            console.log("i'm 2")
             $('.chatpannel').append('<div class="persontwo_chat">'+ data.message + '</div>');
         }
         else if (data.message !='' && data.sender === "{{ user }}")  $(".chatpannel").append('<div class="my_chat"><div class="div_my_chat">'+ data.message + '</div></div>');
