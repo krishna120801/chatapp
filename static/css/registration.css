@@ -40,6 +40,7 @@ a{
   float:left;
 }
 .sgnform{
+  margin-top:10%;
   left      : 50%;
   position:absolute;
     transform : translate(-50%);
