@@ -24,7 +24,6 @@ justify-content:space-between;
     padding-right: 1%;
 }@media (max-width:767px){
     .profilsec{
-        position: fixed;
         margin-top:25%;
     width:auto;
    height:52%;
@@ -35,8 +34,9 @@ li{
     list-style: none;
 }
 .profilsec
-{position: fixed;
+{
     padding:1em;
+    padding-bottom:1%;
     margin-bottom: 10%;
     width:auto;
     left:50%;
