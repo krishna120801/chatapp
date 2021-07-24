@@ -30,9 +30,11 @@
         {% endif %}
             {% csrf_token %}
             <div>Username{{ form.username  }}<br>
-            <small style="color:rgba(252, 252, 32, 0.979)">Note: username is not your email id. so don't apply @ format:)</small>
+            <small style="color:rgba(252, 252, 32, 0.979)">Note: username is not your email id. so don't apply @ format and it's shouldn't contain whitespaces must be unique:)</small>
             </div>
-            <div>Password<br>{{ form.password1 }}<br></div>
+            <div>Password<br>{{ form.password1 }}<br>
+		 <small style="color:rgba(252, 252, 32, 0.979)">Note: Your Password should be numbers,Alphbates and special characters:)</small>
+		</div>
             <div>Confirm Password{{ form.password2 }}<br></div>
             <div><button class="btn" type="submit">SIGN UP</button></div>
                 
