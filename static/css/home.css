@@ -39,10 +39,9 @@ li{
     padding:1em;
     margin-bottom: 10%;
     width:auto;
-    top:50%;
     left:50%;
     position:absolute;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%);
     background: #f2f2f2;
     color:#000;
 }
@@ -51,7 +50,7 @@ li{
     float: left;
     }
 .anchor{
-    color:rgb(0, 255, 170);
+    color:#4B0082;
     padding:0.2em;
     }
     .cemail,.nickname{
@@ -63,7 +62,7 @@ li{
     .logoutbtn{
         background: none;
         outline:none;
-        border:2px solid aquamarine;
+        border:2px solid #8745b6;
         font-weight: bold;
         float:left;
         margin-left: 5%;
