@@ -73,10 +73,10 @@ max-height:100%;
 .logbtn{
     background: none;
     outline:none;
-    border:2px solid aquamarine;
+    border:2px solid #8745b6;
     font-weight: bold;
     float:left;
-    color:aquamarine;
+    color:#4B0082;
     margin-left: 5%;
 }
 .forpas{
