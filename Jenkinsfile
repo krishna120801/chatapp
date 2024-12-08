@@ -7,12 +7,17 @@ pipeline{
     }
     stages
     {
-        stage("chekout"){
-            checkout scm
+        stage("Checkout"){
+            step{
+                checkout scm
+            }
+            
         }
         stage("Test"){
-            echo "Infra Testing...."
-            sh 'python3 --version'
+            step{
+                echo "Infra Testing...."
+                sh 'python3 --version'
+            }
         }
     }
     post
