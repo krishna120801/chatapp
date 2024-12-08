@@ -1,6 +1,6 @@
 pipeline{
     agent any
-    enviroment{
+    environment{
         Docker='prod'
         kubernetes='stage'
         local='non-prod'
@@ -8,13 +8,13 @@ pipeline{
     stages
     {
         stage("Checkout"){
-            step{
+            steps{
                 checkout scm
             }
             
         }
         stage("Test"){
-            step{
+            steps{
                 echo "Infra Testing...."
                 sh 'python3 --version'
             }
