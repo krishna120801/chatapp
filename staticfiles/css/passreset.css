@@ -1,0 +1,43 @@
+body{
+    opacity:0.8;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(179,236,157,1) 45%, rgba(0,212,255,1) 100%);
+    background-size: cover;
+    color:#fff;
+}
+h1{
+    text-decoration: underline aquamarine;
+  }
+  #id_email,#id_new_password1,#id_new_password2{
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(179,236,157,1) 45%, rgba(0,212,255,1) 100%);
+    border-radius: 5px;
+    outline:none;
+    height:2em;
+    width:80%;
+    color:#f2f2f2;
+    margin:1em;
+  }
+section{
+    font-family: 'Otomanopee One', sans-serif;
+    background-color: rgba(1, 26, 17, 0.692);
+    border:1px solid #fff;
+    border-radius: 10px;
+    text-align:center;
+    margin-left: 5%;
+    margin-right:5%;
+    padding:10%;
+}
+.adv{
+    text-align: center;
+    color:#fff;
+    padding-bottom: 0%;
+    margin-bottom: 5%;
+  }
+  input[type="submit"]{
+      height:2.5rem;
+  }
+  ul{
+    color:#ff0000;
+  }
+  li{
+    list-style-type: none;
+  }
